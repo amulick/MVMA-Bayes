@@ -15,7 +15,7 @@ library("mixmeta")
 load(file="../data/ecz_sev_MVMA_data.RData")
 d <- ecz_sev_MVMA_data
 
-source("JAGS_scripts.R") 
+source("../scripts/JAGS_scripts.R") 
 
 
 
