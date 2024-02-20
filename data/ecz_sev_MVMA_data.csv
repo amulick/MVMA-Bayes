@@ -1,0 +1,91 @@
+"study","outcome","exposure","logor","se"
+"Andersen 2016","Angina","eczema: mild",NA,NA
+"Riis 2016","Angina","eczema: mild",NA,NA
+"Silverwood & Forbes 2018","Angina","eczema: mild",0.22314355131421,0.0669296593029314
+"Standl 2016","Angina","eczema: mild",-0.0725706928348354,0.0520184156597761
+"Su 2014","Angina","eczema: mild",NA,NA
+"Andersen 2016","Angina","eczema: mod",NA,NA
+"Riis 2016","Angina","eczema: mod",NA,NA
+"Silverwood & Forbes 2018","Angina","eczema: mod",0.198850858745165,0.0745887661962228
+"Standl 2016","Angina","eczema: mod",0.182321556793955,0.0340641307715619
+"Su 2014","Angina","eczema: mod",NA,NA
+"Andersen 2016","Angina","eczema: severe",NA,NA
+"Riis 2016","Angina","eczema: severe",NA,NA
+"Silverwood & Forbes 2018","Angina","eczema: severe",0.392042087776024,0.160988457121828
+"Standl 2016","Angina","eczema: severe",0.314810739840034,0.0448042266946832
+"Su 2014","Angina","eczema: severe",NA,NA
+"Andersen 2016","CV death","eczema: mild",NA,NA
+"Riis 2016","CV death","eczema: mild",NA,NA
+"Silverwood & Forbes 2018","CV death","eczema: mild",-0.105360515657826,0.0393241530171577
+"Standl 2016","CV death","eczema: mild",NA,NA
+"Su 2014","CV death","eczema: mild",NA,NA
+"Andersen 2016","CV death","eczema: mod",-0.0304592074847086,0.0862787961987237
+"Riis 2016","CV death","eczema: mod",NA,NA
+"Silverwood & Forbes 2018","CV death","eczema: mod",0.0582689081239758,0.0408073085950709
+"Standl 2016","CV death","eczema: mod",NA,NA
+"Su 2014","CV death","eczema: mod",NA,NA
+"Andersen 2016","CV death","eczema: severe",0.378436435720245,0.162101750749821
+"Riis 2016","CV death","eczema: severe",NA,NA
+"Silverwood & Forbes 2018","CV death","eczema: severe",0.322083499169113,0.0830159184782215
+"Standl 2016","CV death","eczema: severe",NA,NA
+"Su 2014","CV death","eczema: severe",NA,NA
+"Andersen 2016","Heart failure","eczema: mild",NA,NA
+"Riis 2016","Heart failure","eczema: mild",NA,NA
+"Silverwood & Forbes 2018","Heart failure","eczema: mild",0.113328687846661,0.0477580465376377
+"Standl 2016","Heart failure","eczema: mild",NA,NA
+"Su 2014","Heart failure","eczema: mild",NA,NA
+"Andersen 2016","Heart failure","eczema: mod",NA,NA
+"Riis 2016","Heart failure","eczema: mod",NA,NA
+"Silverwood & Forbes 2018","Heart failure","eczema: mod",0.223143547773361,0.0487385801970959
+"Standl 2016","Heart failure","eczema: mod",NA,NA
+"Su 2014","Heart failure","eczema: mod",NA,NA
+"Andersen 2016","Heart failure","eczema: severe",NA,NA
+"Riis 2016","Heart failure","eczema: severe",NA,NA
+"Silverwood & Forbes 2018","Heart failure","eczema: severe",0.524728536605835,0.102199614048004
+"Standl 2016","Heart failure","eczema: severe",NA,NA
+"Su 2014","Heart failure","eczema: severe",NA,NA
+"Andersen 2016","Ischaemic stroke","eczema: mild",NA,NA
+"Riis 2016","Ischaemic stroke","eczema: mild",NA,NA
+"Silverwood & Forbes 2018","Ischaemic stroke","eczema: mild",NA,NA
+"Standl 2016","Ischaemic stroke","eczema: mild",NA,NA
+"Su 2014","Ischaemic stroke","eczema: mild",0.182321556793955,0.0947866215388987
+"Andersen 2016","Ischaemic stroke","eczema: mod",-0.083381608939051,0.0900054527098833
+"Riis 2016","Ischaemic stroke","eczema: mod",NA,NA
+"Silverwood & Forbes 2018","Ischaemic stroke","eczema: mod",NA,NA
+"Standl 2016","Ischaemic stroke","eczema: mod",NA,NA
+"Su 2014","Ischaemic stroke","eczema: mod",0.494696241836107,0.147165146541858
+"Andersen 2016","Ischaemic stroke","eczema: severe",0.412109650826833,0.169636812141135
+"Riis 2016","Ischaemic stroke","eczema: severe",NA,NA
+"Silverwood & Forbes 2018","Ischaemic stroke","eczema: severe",NA,NA
+"Standl 2016","Ischaemic stroke","eczema: severe",NA,NA
+"Su 2014","Ischaemic stroke","eczema: severe",0.536493370514568,0.204144213294978
+"Andersen 2016","MI","eczema: mild",NA,NA
+"Riis 2016","MI","eczema: mild",NA,NA
+"Silverwood & Forbes 2018","MI","eczema: mild",0,0.0483726681825424
+"Standl 2016","MI","eczema: mild",-0.083381608939051,0.0693708457866433
+"Su 2014","MI","eczema: mild",NA,NA
+"Andersen 2016","MI","eczema: mod",NA,NA
+"Riis 2016","MI","eczema: mod",0.457424847038875,0.223542193178688
+"Silverwood & Forbes 2018","MI","eczema: mod",0.104360015324243,0.0502713873803975
+"Standl 2016","MI","eczema: mod",0.104360015324243,0.0435759521205281
+"Su 2014","MI","eczema: mod",NA,NA
+"Andersen 2016","MI","eczema: severe",NA,NA
+"Riis 2016","MI","eczema: severe",0.8754687373539,0.324977069281315
+"Silverwood & Forbes 2018","MI","eczema: severe",0.343589704390077,0.101206996974339
+"Standl 2016","MI","eczema: severe",0.0769610411361284,0.0638122839624275
+"Su 2014","MI","eczema: severe",NA,NA
+"Andersen 2016","Stroke","eczema: mild",NA,NA
+"Riis 2016","Stroke","eczema: mild",NA,NA
+"Silverwood & Forbes 2018","Stroke","eczema: mild",0.0676586484738149,0.0430159980703553
+"Standl 2016","Stroke","eczema: mild",-0.083381608939051,0.0470162545913127
+"Su 2014","Stroke","eczema: mild",NA,NA
+"Andersen 2016","Stroke","eczema: mod",NA,NA
+"Riis 2016","Stroke","eczema: mod",NA,NA
+"Silverwood & Forbes 2018","Stroke","eczema: mod",0.131028262406404,0.0469190913675838
+"Standl 2016","Stroke","eczema: mod",0.048790164169432,0.0314742400919655
+"Su 2014","Stroke","eczema: mod",NA,NA
+"Andersen 2016","Stroke","eczema: severe",NA,NA
+"Riis 2016","Stroke","eczema: severe",NA,NA
+"Silverwood & Forbes 2018","Stroke","eczema: severe",0.198850858745165,0.0974723869701162
+"Standl 2016","Stroke","eczema: severe",0.0582689081239758,0.0430159980703553
+"Su 2014","Stroke","eczema: severe",NA,NA
