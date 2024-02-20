@@ -4,12 +4,6 @@
 # *****	Author: Amy Mulick, LSHTM							                  *****
 # ***** February 2024                                           *****
 # *****                                                         *****
-# *****	jcode.1: Pareto hyperprior on precision			            *****
-# *****	jcode.2: Gamma hyperprior on precision			            *****
-# *****	jcode.3: Uniform hyperprior on log variance		        	*****
-# ***** jcode.4: Uniform hyperprior on variance			            *****
-# ***** jcode.5: Uniform hyperprior on standard deviation			  *****
-# ***** jcode.6: Half normal hyperprior on standard deviation		*****
 # *******************************************************************
 
 rm(list=ls())
@@ -18,14 +12,9 @@ rm(list=ls())
 library("rjags")
 library("mixmeta")
 
-library("meta")
-library("nlme")
-library("invgamma")
-library("plotrix")
-library("metafor")
-
 load(file="../data/ecz_sev_MVMA_data.RData")
 d <- ecz_sev_MVMA_data
+
 source("JAGS_scripts.R") 
 
 
