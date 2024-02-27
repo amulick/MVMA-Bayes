@@ -20,10 +20,14 @@ for(i in 1:N){               #number of studies
   for(j in 1:M){               #number of exposures 
     for(k in 1:P){               #number of outcomes
       
-      logor[i,j,k]   ~ dnorm(mu[i,j,k], pow(se[i,j,k],-2))          #outcome distribution
-      mu[i,j,k] <- u[i,k] + b1[k] + b2[k]*exposure[i,j,k]      #data generating model
+      #within-study outcome distributions
+      logor[i,j,k]   ~ dnorm(mu[i,j,k], pow(se[i,j,k],-2))
       
-      se[i,j,k] ~ dunif(0, imp.se)        #impute missing SEs (does not overwrite observed SEs)
+      #between-study mean of data-generating mechanisms
+      mu[i,j,k] <- u[i,k] + b[k]*exposure[i,j,k]
+      
+      #impute missing SEs
+      se[i,j,k] ~ dunif(0, 1)
       
     }
   }
@@ -31,25 +35,21 @@ for(i in 1:N){               #number of studies
 
 ############## PRIOR DISTRIBUTIONS
 
-# fixed effects
 for (k in 1:P) {               #number of outcomes 
-  b1[k] ~ dnorm(0, 1/100000)       #outcome-specific intercept
-  b2[k] ~ dnorm(0, 1/100000)       #outcome-specific slope 
-}
-
-# random effects
-for(i in 1:N){               #number of studies
-  for(k in 1:P){               #number of outcomes
-    u[i,k] ~ dnorm(0,inv.tau2[k])    #random studyXoutcome effect, does not differ by exposure
+  b[k] ~ dnorm(0, 1/100000)       #FIXED outcome-specific slopes
+  
+  for(i in 1:N){               #number of studies
+    u[i,k] ~ dnorm(0,inv.tau2[k])    #RANDOM studyXoutcome slope
   }
+  
 }
 
 ############## HYPERPRIORS
 
 #Prior 1 (precision)
-for(j in 1:P){              
-  inv.tau2[j]     ~ dpar(1, a.tau)
-  tau2[j]   <- 1/inv.tau2[j]
+for(k in 1:P){              
+  inv.tau2[k]     ~ dpar(1, a.tau)
+  tau2[k]   <- 1/inv.tau2[k]
 }
 
 }"
@@ -64,10 +64,9 @@ for(i in 1:N){               #number of studies
   for(j in 1:M){               #number of exposures 
     for(k in 1:P){               #number of outcomes
       
-      logor[i,j,k]   ~ dnorm(mu[i,j,k], pow(se[i,j,k],-2))          #outcome distribution
-      mu[i,j,k] <- u[i,k] + b1[k] + b2[k]*exposure[i,j,k]      #data generating model
-      
-      se[i,j,k] ~ dunif(0, imp.se)        #impute missing SEs (does not overwrite observed SEs)
+      logor[i,j,k]   ~ dnorm(mu[i,j,k], pow(se[i,j,k],-2))
+      mu[i,j,k] <- u[i,k] + b[k]*exposure[i,j,k]
+      se[i,j,k] ~ dunif(0, 1)
       
     }
   }
@@ -75,17 +74,13 @@ for(i in 1:N){               #number of studies
 
 ############## PRIOR DISTRIBUTIONS
 
-# fixed effects
 for (k in 1:P) {               #number of outcomes 
-  b1[k] ~ dnorm(0, 1/100000)       #outcome-specific intercept
-  b2[k] ~ dnorm(0, 1/100000)       #outcome-specific slope 
-}
-
-# random effects
-for(i in 1:N){               #number of studies
-  for(k in 1:P){               #number of outcomes
-    u[i,k] ~ dnorm(0,inv.tau2[k])    #random studyXoutcome effect
+  b[k] ~ dnorm(0, 1/100000)       #FIXED outcome-specific slopes
+  
+  for(i in 1:N){               #number of studies
+    u[i,k] ~ dnorm(0,inv.tau2[k])    #RANDOM studyXoutcome effect, does not differ by exposure
   }
+  
 }
 
 ############## HYPERPRIORS
@@ -109,10 +104,9 @@ for(i in 1:N){               #number of studies
   for(j in 1:M){               #number of exposures 
     for(k in 1:P){               #number of outcomes
       
-      logor[i,j,k]   ~ dnorm(mu[i,j,k], pow(se[i,j,k],-2))          #outcome distribution
-      mu[i,j,k] <- u[i,k] + b1[k] + b2[k]*exposure[i,j,k]      #data generating model
-      
-      se[i,j,k] ~ dunif(0, imp.se)        #impute missing SEs (does not overwrite observed SEs)
+      logor[i,j,k]   ~ dnorm(mu[i,j,k], pow(se[i,j,k],-2))
+      mu[i,j,k] <- u[i,k] + b[k]*exposure[i,j,k]
+      se[i,j,k] ~ dunif(0, 1)
       
     }
   }
@@ -120,17 +114,13 @@ for(i in 1:N){               #number of studies
 
 ############## PRIOR DISTRIBUTIONS
 
-# fixed effects
 for (k in 1:P) {               #number of outcomes 
-  b1[k] ~ dnorm(0, 1/100000)       #outcome-specific intercept
-  b2[k] ~ dnorm(0, 1/100000)       #outcome-specific slope 
-}
-
-# random effects
-for(i in 1:N){               #number of studies
-  for(k in 1:P){               #number of outcomes
-    u[i,k] ~ dnorm(0,inv.tau2[k])    #random studyXoutcome effect
+  b[k] ~ dnorm(0, 1/100000)       #FIXED outcome-specific slopes
+  
+  for(i in 1:N){               #number of studies
+    u[i,k] ~ dnorm(0,inv.tau2[k])    #RANDOM studyXoutcome effect, does not differ by exposure
   }
+  
 }
 
 ############## HYPERPRIORS
@@ -154,10 +144,9 @@ for(i in 1:N){               #number of studies
   for(j in 1:M){               #number of exposures 
     for(k in 1:P){               #number of outcomes
       
-      logor[i,j,k]   ~ dnorm(mu[i,j,k], pow(se[i,j,k],-2))          #outcome distribution
-      mu[i,j,k] <- u[i,k] + b1[k] + b2[k]*exposure[i,j,k]      #data generating model
-      
-      se[i,j,k] ~ dunif(0, imp.se)        #impute missing SEs (does not overwrite observed SEs)
+      logor[i,j,k]   ~ dnorm(mu[i,j,k], pow(se[i,j,k],-2))
+      mu[i,j,k] <- u[i,k] + b[k]*exposure[i,j,k]
+      se[i,j,k] ~ dunif(0, 1)
       
     }
   }
@@ -165,17 +154,13 @@ for(i in 1:N){               #number of studies
 
 ############## PRIOR DISTRIBUTIONS
 
-# fixed effects
 for (k in 1:P) {               #number of outcomes 
-  b1[k] ~ dnorm(0, 1/100000)       #outcome-specific intercept
-  b2[k] ~ dnorm(0, 1/100000)       #outcome-specific slope 
-}
-
-# random effects
-for(i in 1:N){               #number of studies
-  for(k in 1:P){               #number of outcomes
-    u[i,k] ~ dnorm(0,inv.tau2[k])    #random studyXoutcome effect
+  b[k] ~ dnorm(0, 1/100000)       #FIXED outcome-specific slopes
+  
+  for(i in 1:N){               #number of studies
+    u[i,k] ~ dnorm(0,inv.tau2[k])    #RANDOM studyXoutcome effect, does not differ by exposure
   }
+  
 }
 
 ############## HYPERPRIORS
@@ -198,10 +183,9 @@ for(i in 1:N){               #number of studies
   for(j in 1:M){               #number of exposures 
     for(k in 1:P){               #number of outcomes
       
-      logor[i,j,k]   ~ dnorm(mu[i,j,k], pow(se[i,j,k],-2))          #outcome distribution
-      mu[i,j,k] <- u[i,k] + b1[k] + b2[k]*exposure[i,j,k]      #data generating model
-      
-      se[i,j,k] ~ dunif(0, imp.se)        #impute missing SEs (does not overwrite observed SEs)
+      logor[i,j,k]   ~ dnorm(mu[i,j,k], pow(se[i,j,k],-2))
+      mu[i,j,k] <- u[i,k] + b[k]*exposure[i,j,k]
+      se[i,j,k] ~ dunif(0, 1)
       
     }
   }
@@ -209,17 +193,13 @@ for(i in 1:N){               #number of studies
 
 ############## PRIOR DISTRIBUTIONS
 
-# fixed effects
 for (k in 1:P) {               #number of outcomes 
-  b1[k] ~ dnorm(0, 1/100000)       #outcome-specific intercept
-  b2[k] ~ dnorm(0, 1/100000)       #outcome-specific slope 
-}
-
-# random effects
-for(i in 1:N){               #number of studies
-  for(k in 1:P){               #number of outcomes
-    u[i,k] ~ dnorm(0,inv.tau2[k])    #random studyXoutcome effect
+  b[k] ~ dnorm(0, 1/100000)       #FIXED outcome-specific slopes
+  
+  for(i in 1:N){               #number of studies
+    u[i,k] ~ dnorm(0,inv.tau2[k])    #RANDOM studyXoutcome effect, does not differ by exposure
   }
+  
 }
 
 ############## HYPERPRIORS
@@ -244,10 +224,9 @@ for(i in 1:N){               #number of studies
   for(j in 1:M){               #number of exposures 
     for(k in 1:P){               #number of outcomes
       
-      logor[i,j,k]   ~ dnorm(mu[i,j,k], pow(se[i,j,k],-2))          #outcome distribution
-      mu[i,j,k] <- u[i,k] + b1[k] + b2[k]*exposure[i,j,k]      #data generating model
-      
-      se[i,j,k] ~ dunif(0, imp.se)        #impute missing SEs (does not overwrite observed SEs)
+      logor[i,j,k]   ~ dnorm(mu[i,j,k], pow(se[i,j,k],-2))
+      mu[i,j,k] <- u[i,k] + b[k]*exposure[i,j,k]
+      se[i,j,k] ~ dunif(0, 1)
       
     }
   }
@@ -255,17 +234,13 @@ for(i in 1:N){               #number of studies
 
 ############## PRIOR DISTRIBUTIONS
 
-# fixed effects
 for (k in 1:P) {               #number of outcomes 
-  b1[k] ~ dnorm(0, 1/100000)       #outcome-specific intercept
-  b2[k] ~ dnorm(0, 1/100000)       #outcome-specific slope 
-}
-
-# random effects
-for(i in 1:N){               #number of studies
-  for(k in 1:P){               #number of outcomes
-    u[i,k] ~ dnorm(0,inv.tau2[k])    #random studyXoutcome effect
+  b[k] ~ dnorm(0, 1/100000)       #FIXED outcome-specific slopes
+  
+  for(i in 1:N){               #number of studies
+    u[i,k] ~ dnorm(0,inv.tau2[k])    #RANDOM studyXoutcome effect, does not differ by exposure
   }
+  
 }
 
 ############## HYPERPRIORS
